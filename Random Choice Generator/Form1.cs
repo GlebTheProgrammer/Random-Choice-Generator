@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace Random_Choice_Generator
 {
@@ -17,6 +18,7 @@ namespace Random_Choice_Generator
     {
         private const string formName = "AnswerGenerator";
         private readonly string configPath = $"{Environment.CurrentDirectory}\\answersConfig.json";  // Определение пути к Config File
+        private string[] answers;
 
         public Form1()
         {
@@ -69,6 +71,8 @@ namespace Random_Choice_Generator
             try
             {
                 var data = File.ReadAllText(configPath);
+
+                answers = JsonConvert.DeserializeObject<string[]>(data);
             }
             catch (Exception ex)
             {
@@ -76,7 +80,18 @@ namespace Random_Choice_Generator
             }
             finally
             {
-
+                if (answers == null)
+                {
+                    Close();
+                }
+                else
+                {
+                    if(answers.Length == 0)
+                    {
+                        MessageBox.Show("С файлом что-то не так. Убедитесь в оригинальности используемого json файла.");
+                        Close();
+                    }
+                }
             }
         }
     }
