@@ -14,7 +14,7 @@ namespace Random_Choice_Generator
 
     public partial class Form1 : Form
     {
-        private const string formName = "AnswerLoading";
+        private const string formName = "AnswerGenerator";
 
         public Form1()
         {
@@ -38,6 +38,7 @@ namespace Random_Choice_Generator
 
         private async void buttonGetAnswer_Click(object sender, EventArgs e)
         {
+           buttonGetAnswer.Enabled = false;          // Отключение возможности запускать несколько потоков при многократном нажатии на кнопку
            await Task.Run(() =>                             // Организация многопоточности для работы progressBar и взаимодействия с формой (+ асинхронность)
             {
                 for (int i = 1; i <= 100; i++)
@@ -52,6 +53,10 @@ namespace Random_Choice_Generator
             });
 
             MessageBox.Show("Answer");
+
+            progressBar.Value = 0;
+            Text = formName;
+            buttonGetAnswer.Enabled = true;
             
         }
 
