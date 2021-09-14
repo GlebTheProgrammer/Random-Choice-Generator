@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 
 namespace Random_Choice_Generator
 {
@@ -15,6 +16,7 @@ namespace Random_Choice_Generator
     public partial class Form1 : Form
     {
         private const string formName = "AnswerGenerator";
+        private readonly string configPath = $"{Environment.CurrentDirectory}\\answersConfig.json";  // Определение пути к Config File
 
         public Form1()
         {
@@ -63,6 +65,19 @@ namespace Random_Choice_Generator
         private void Form1_Load(object sender, EventArgs e)
         {
             Text = formName;
+
+            try
+            {
+                var data = File.ReadAllText(configPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+
+            }
         }
     }
 }
