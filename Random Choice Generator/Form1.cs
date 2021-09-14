@@ -19,6 +19,7 @@ namespace Random_Choice_Generator
         private const string formName = "AnswerGenerator";
         private readonly string configPath = $"{Environment.CurrentDirectory}\\answersConfig.json";  // Определение пути к Config File
         private string[] answers;
+        private Random randomGenerator = new Random();
 
         public Form1()
         {
@@ -56,7 +57,11 @@ namespace Random_Choice_Generator
                 }
             });
 
-            MessageBox.Show("Answer");
+            var answerIndex = randomGenerator.Next(0, answers.Length);
+
+            var finalAnswer = answers[answerIndex];
+
+            MessageBox.Show($"{finalAnswer}.");
 
             progressBar.Value = 0;
             Text = formName;
