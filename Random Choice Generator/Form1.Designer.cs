@@ -75,6 +75,7 @@
             this.buttonGetAnswer.TabIndex = 0;
             this.buttonGetAnswer.Text = "Get Answer";
             this.buttonGetAnswer.UseVisualStyleBackColor = true;
+            this.buttonGetAnswer.Click += new System.EventHandler(this.buttonGetAnswer_Click);
             // 
             // Form1
             // 
