@@ -53,8 +53,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.buttonGetAnswer);
-            this.splitContainer1.Size = new System.Drawing.Size(556, 329);
-            this.splitContainer1.SplitterDistance = 147;
+            this.splitContainer1.Size = new System.Drawing.Size(427, 211);
+            this.splitContainer1.SplitterDistance = 105;
             this.splitContainer1.TabIndex = 0;
             // 
             // progressBar
@@ -62,7 +62,7 @@
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressBar.Location = new System.Drawing.Point(0, 0);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(552, 143);
+            this.progressBar.Size = new System.Drawing.Size(423, 101);
             this.progressBar.TabIndex = 0;
             // 
             // buttonGetAnswer
@@ -71,7 +71,7 @@
             this.buttonGetAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonGetAnswer.Location = new System.Drawing.Point(0, 0);
             this.buttonGetAnswer.Name = "buttonGetAnswer";
-            this.buttonGetAnswer.Size = new System.Drawing.Size(552, 174);
+            this.buttonGetAnswer.Size = new System.Drawing.Size(423, 98);
             this.buttonGetAnswer.TabIndex = 0;
             this.buttonGetAnswer.Text = "Get Answer";
             this.buttonGetAnswer.UseVisualStyleBackColor = true;
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 329);
+            this.ClientSize = new System.Drawing.Size(427, 211);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
