@@ -11,8 +11,11 @@ using System.Threading;
 
 namespace Random_Choice_Generator
 {
+
     public partial class Form1 : Form
     {
+        private const string formName = "AnswerLoading";
+
         public Form1()
         {
             InitializeComponent();
@@ -37,11 +40,12 @@ namespace Random_Choice_Generator
         {
            await Task.Run(() =>                             // Организация многопоточности для работы progressBar и взаимодействия с формой (+ асинхронность)
             {
-                for (int i = 1; i < 100; i++)
+                for (int i = 1; i <= 100; i++)
                 {
                     Invoke(new Action(() =>           // Решение проблемы обращения к progressBar из другого потока
                     {
                         ProgressBarUpload(i);
+                        Text = $"{i}%";
                     }));
                     Thread.Sleep(20);
                 }
@@ -49,6 +53,11 @@ namespace Random_Choice_Generator
 
             MessageBox.Show("Answer");
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Text = formName;
         }
     }
 }
